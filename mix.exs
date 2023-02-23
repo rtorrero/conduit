@@ -19,7 +19,7 @@ defmodule Conduit.MixProject do
   def application do
     [
       mod: {Conduit.Application, []},
-      extra_applications: [:logger, :runtime_tools]
+      extra_applications: [:logger, :runtime_tools, :eventstore]
     ]
   end
 
@@ -32,6 +32,9 @@ defmodule Conduit.MixProject do
   # Type `mix help deps` for examples and options.
   defp deps do
     [
+      {:commanded, "~> 1.3"},
+      {:commanded_eventstore_adapter, "~> 1.2"},
+      {:eventstore, "~> 1.4"},
       {:phoenix, "~> 1.6.8"},
       {:phoenix_ecto, "~> 4.4"},
       {:ecto_sql, "~> 3.6"},

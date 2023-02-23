@@ -1,5 +1,25 @@
 import Config
 
+# Configure your database
+config :conduit, Conduit.Repo,
+  username: "postgres",
+  password: "postgres",
+  hostname: "localhost",
+  database: "conduit_prod",
+  port: 5470,
+  stacktrace: true,
+  show_sensitive_data_on_connection_error: true,
+  pool_size: 10
+
+# Configure the event store database
+config :conduit, Conduit.EventStore,
+  serializer: EventStore.JsonSerializer,
+  username: "postgres",
+  password: "postgres",
+  database: "conduit_eventstore_prod",
+  hostname: "localhost",
+  port: 5470
+
 # For production, don't forget to configure the url host
 # to something meaningful, Phoenix uses this information
 # when generating URLs.

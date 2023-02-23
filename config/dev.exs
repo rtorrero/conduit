@@ -11,6 +11,15 @@ config :conduit, Conduit.Repo,
   show_sensitive_data_on_connection_error: true,
   pool_size: 10
 
+# Configure the event store database
+config :conduit, Conduit.EventStore,
+  serializer: EventStore.JsonSerializer,
+  username: "postgres",
+  password: "postgres",
+  database: "conduit_eventstore_dev",
+  hostname: "localhost",
+  port: 5470
+
 # For development, we disable any cache and enable
 # debugging and code reloading.
 #

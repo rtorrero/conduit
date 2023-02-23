@@ -8,7 +8,8 @@
 import Config
 
 config :conduit,
-  ecto_repos: [Conduit.Repo]
+  ecto_repos: [Conduit.Repo],
+  event_stores: [Conduit.EventStore]
 
 # Configures the endpoint
 config :conduit, ConduitWeb.Endpoint,
@@ -36,6 +37,9 @@ config :logger, :console,
 
 # Use Jason for JSON parsing in Phoenix
 config :phoenix, :json_library, Jason
+
+config :commanded,
+  event_store_adapter: Commanded.EventStore.Adapters.EventStore
 
 # Import environment specific config. This must remain at the bottom
 # of this file so it overrides the configuration defined above.

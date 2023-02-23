@@ -2,6 +2,7 @@ defmodule Conduit.Application do
   @moduledoc false
 
   use Application
+  use Commanded.Application, otp_app: :conduit
 
   @impl true
   def start(_type, _args) do
