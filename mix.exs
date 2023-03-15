@@ -32,6 +32,7 @@ defmodule Conduit.MixProject do
   # Type `mix help deps` for examples and options.
   defp deps do
     [
+      {:exconstructor, "~> 1.2.7"},
       {:uuid, "~> 1.1"},
       {:ex_machina, "~> 2.7", only: :test},
       {:commanded, "~> 1.3"},
